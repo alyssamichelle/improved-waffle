@@ -1,4 +1,5 @@
 # ImprovedWaffle
+Improved waffle is a very sophisticated app. I'm creating it to get practice with Angularing. :D :rainbow:
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.6.
 
