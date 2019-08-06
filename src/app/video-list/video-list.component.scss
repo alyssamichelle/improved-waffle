@@ -1,0 +1,37 @@
+
+.video-list-container {
+  position: relative;
+
+  &::after {
+    right: 1px;
+    bottom: 1px;
+    left: 1px;
+    position: absolute;
+    height: 40px;
+    content: '';
+    display: block;
+    background: linear-gradient(to top, white 5%, rgba(255,255,255,0));
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+
+.video-list {
+  max-height: 400px;
+  width: 200px;
+  margin: 0;
+  padding: 0 40px 40px;
+  overflow: scroll;
+  background: white;
+  border: 1px solid hotpink;
+  box-shadow: -1px -1px 0 hotpink, 1px 1px 0 blue;
+
+  li {
+    list-style-type: none;
+  }
+
+  li.selected {
+    background-color: hotpink;
+    color: white;
+  }
+}

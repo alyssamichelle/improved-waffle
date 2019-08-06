@@ -1,0 +1,24 @@
+:host {
+  margin-left: 50px;
+  color: white;
+  position: relative;
+}
+
+.video-wrapper-outer {
+  outline: 1px solid black;
+  border: 3px solid #808082;
+  background-color: blue;
+  width: 550px;
+  height: 300px;
+}
+
+.video-wrapper-inner {
+  background-color: #c1c8ca;
+  outline: 1px solid black;
+  border-top: 13px solid #808082;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+}
