@@ -1,28 +1,8 @@
 <div class="video-list-container">
   <ul class="video-list">
-    <li>
-      <h2>Video Title Here</h2>
-      <p>Video Description Here</p>
-    </li>
-    <li>
-      <h2>Video Title Here</h2>
-      <p>Video Description Here</p>
-    </li>
-    <li>
-      <h2>Video Title Here</h2>
-      <p>Video Description Here</p>
-    </li>
-    <li>
-      <h2>Video Title Here</h2>
-      <p>Video Description Here</p>
-    </li>
-    <li>
-      <h2>Video Title Here</h2>
-      <p>Video Description Here</p>
-    </li>
-    <li>
-      <h2>Video Title Here</h2>
-      <p>Video Description Here</p>
+    <li *ngFor="let video of videoData | async">
+      <h2>{{video.title}}</h2>
+      <p>{{video.author}}</p>
     </li>
   </ul>
 </div>

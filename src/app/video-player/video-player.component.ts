@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { VideoType } from './../video.service';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   // tslint:disable-next-line: component-selector
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./video-player.component.scss']
 })
 export class VideoPlayerComponent implements OnInit {
+  @Input() selectedVideo: VideoType;
 
   constructor() { }
 

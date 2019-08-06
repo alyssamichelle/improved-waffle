@@ -1,4 +1,7 @@
+import { VideoService, VideoType } from './../video.service';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Component({
   // tslint:disable-next-line: component-selector
@@ -7,8 +10,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./video-dashboard.component.scss']
 })
 export class VideoDashboardComponent implements OnInit {
+  videoData: Observable<VideoType[]>;
+  selectedVideo;
 
-  constructor() { }
+  constructor(private videoService: VideoService) {
+    this.videoData = videoService.loadVideos()
+      .pipe(tap(data => this.selectedVideo = data[0]));
+  }
 
   ngOnInit() {
   }
