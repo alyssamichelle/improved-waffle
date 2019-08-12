@@ -1,4 +1,3 @@
-
 .video-list-container {
   position: relative;
 
@@ -28,10 +27,16 @@
 
   li {
     list-style-type: none;
+    cursor: pointer;
+    transition: background-color .5s ease;
   }
 
   li.selected {
     background-color: hotpink;
     color: white;
+  }
+
+  li:hover {
+    background-color: #ccc;
   }
 }

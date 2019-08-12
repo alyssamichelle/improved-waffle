@@ -1,5 +1,5 @@
 import { VideoService, VideoType } from './../video.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
@@ -10,15 +10,20 @@ import { tap } from 'rxjs/operators';
   styleUrls: ['./video-dashboard.component.scss']
 })
 export class VideoDashboardComponent implements OnInit {
+  @Input() selectedVideo: VideoType;
   videoData: Observable<VideoType[]>;
-  selectedVideo;
 
   constructor(private videoService: VideoService) {
-    this.videoData = videoService.loadVideos()
-      .pipe(tap(data => this.selectedVideo = data[0]));
   }
 
   ngOnInit() {
+    this.videoData = this.videoService.loadVideos()
+      .pipe(tap(data => this.selectedVideo = data[0]));
+  }
+
+  selectVideoEvent(e) {
+    this.selectedVideo = e;
+    console.log('e: ', e);
   }
 
 }

@@ -24,9 +24,9 @@ export class VideoService {
   constructor(private http: HttpClient) { }
 
   loadVideos() {
-    return this.http.get<VideoType[]>(this.videoUrl + '/videos')
-      .pipe(
-        tap(data => console.log('data: ' + data))
-      )
+    return this.http.get<VideoType[]>(this.videoUrl + '/videos');
+      // .pipe(
+      //   tap(data => console.log('data: ' + data))
+      // )
   }
 }

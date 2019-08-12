@@ -1,8 +1,14 @@
 <div class="video-list-container">
   <ul class="video-list">
-    <li *ngFor="let video of videoData | async">
+    <li *ngFor="let video of videoData | async" 
+        [ngClass]="{selected: video == selectedVideo}"
+        (click)="selectVideo(video)">
       <h2>{{video.title}}</h2>
       <p>{{video.author}}</p>
     </li>
   </ul>
 </div>
+
+<!-- select video on click -->
+<!-- style selected videos -->
+<!-- how to modify video object -->

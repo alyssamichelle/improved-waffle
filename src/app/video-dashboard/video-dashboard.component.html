@@ -1,4 +1,7 @@
 <div class="dashboard-wrapper">
-  <video-list [videoData]="videoData"></video-list>
-  <video-player [selectedVideo]="selectedVideo"></video-player>
+  <video-list [videoData]="videoData"
+    (selectVideoEvent)="selectVideoEvent($event)"></video-list>
+  <video-player 
+    [selectedVideo]="selectedVideo"
+  ></video-player>
 </div>

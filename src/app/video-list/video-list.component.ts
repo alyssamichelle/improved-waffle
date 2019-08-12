@@ -1,5 +1,5 @@
 import { VideoType } from './../video.service';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   // tslint:disable-next-line: component-selector
@@ -9,9 +9,17 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class VideoListComponent implements OnInit {
   @Input() videoData: VideoType[];
+  @Output() public selectVideoEvent = new EventEmitter<VideoType>(); 
+  // get output emitter working
+  selectedVideo;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  selectVideo(video: VideoType) {
+    this.selectedVideo = video;
+    this.selectVideoEvent.emit(video);
   }
 
 }
